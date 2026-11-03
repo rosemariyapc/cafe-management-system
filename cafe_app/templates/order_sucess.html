@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Success</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f8f1e7;
+        }
+
+        .popup{
+            position:fixed;
+            top:20px;
+            right:20px;
+            background:#4caf50;
+            color:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            width:300px;
+            animation:slide 0.5s ease;
+        }
+
+        @keyframes slide{
+            from{transform:translateX(100px); opacity:0;}
+            to{transform:translateX(0); opacity:1;}
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- 👇 THIS IS YOUR POPUP (ADD HERE) -->
+<div class="popup" id="popup">
+
+    <h3>🎉 Order Placed Successfully!</h3>
+
+    <p><b>Item:</b> {{ item_name }}</p>
+    <p><b>Quantity:</b> {{ quantity }}</p>
+    <p><b>Price:</b> ₹{{ price }}</p>
+    <p><b>Total:</b> ₹{{ total_cost }}</p>
+
+</div>
+
+<!-- 👇 SCRIPT (ADD HERE ALSO, BOTTOM OF PAGE) -->
+<script>
+    setTimeout(function(){
+        document.getElementById("popup").style.display = "none";
+        window.location.href = "/user_home/";
+    }, 3000);
+</script>
+
+</body>
+</html>
